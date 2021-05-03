@@ -35,6 +35,7 @@
               <li role="" id="github2btn"><a href="#">GitHub 2</a></li>
               <li role="" id="trello1btn"><a href="#">Trello 1</a></li>
               <li role="" id="canva1btn"><a href="#">Canva 1</a></li>
+              <li role="" id="image1btn"><a href="#">Thank you.</a></li>
               
         </ul>
        
@@ -54,9 +55,10 @@
           <div class="row-fluid">
             <div class="col-sm-5">
               <iframe src="{{src}}" width="425" height="300" frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
               allowfullscreen></iframe>
              <!-- <img  style="width:100%" src="{{src}}"/> 
+              clipboard-write;
                   <h5><a href="{{link}}">Link</a></h5>    -->
             </div>
                 <div class="col-sm-7">
@@ -70,6 +72,28 @@
             </div> 
           </div>
         </script>
+
+        <!-- This template displays a modal pop-up of the image. 
+             It has quite a bit of boilder plate HTML code but in 
+             essence it just displays and image tag within a 
+             set of divs that define the modal 
+        -->
+        <script id="modal-template" type="text/x-handlebars-template">
+          <div id="imageModal" class="modal fade" role="dialog">
+            <div class="modal-dialog"  style="width:800">
+    
+              <div class="modal-content">
+                
+                <div class="modal-body">
+                  <img  style="width:100%" src="{{src}}"/>
+                </div>
+                
+              </div>
+    
+            </div>
+          </div>
+        </script>
+    
     
       </body>
         
@@ -83,16 +107,21 @@
     
         var detail_template = Handlebars.compile(source);
         //var vid = document.getElementById("myVideo");
+
+        source   = $("#modal-template").html();
+    
+        var modal_template = Handlebars.compile(source);
     
     
-        // this is the data object we will be using for Coursera Guided Projects overview page
+    
+        // this is the data object we will be using
         var data = {
           
           //src:"imgs/Avatar.png", 
           //video:"", 
           src:"",
-          title:"Hello & Welcome!",
-          description:" Click on the navigation buttons to know more.",
+          title:"Hello!",
+          description:"Welcome to the Coursera Guided Projects overview page.Click on the navigation buttons to know more.",
           author:"Saheli Basu"
         };
 
@@ -184,12 +213,24 @@
           description:"Something about the project",
           author:"Saheli Basu"
         };    
+
+        // data object for modal template
+        var image1Data = {
+          src: "imgs/thank-you.png",
+          title: "Thank you",
+          description:" ",
+          author: "Saheli Basu"
+          
+        };
+        //print out the variables
+        console.log(image1Data.src + " " + image1Data.title + " " + image1Data.description+ " " + image1Data.src);
  
     
         // this instantiates the home template
         $("#homebtn").click(function () {
 
-    
+              // hide the modal if it is showing
+          $("#imageModal").modal('hide');
           //use the detail template to generate html
           // and put it in the DOM
           var html    = detail_template(data);
@@ -199,7 +240,8 @@
         // this instantiates the about template
         $("#vectr1btn").click(function () {
 
-    
+              // hide the modal if it is showing
+          $("#imageModal").modal('hide');
           //use the detail template to generate html
           // and put it in the DOM
           var html    = detail_template(data1);
@@ -208,7 +250,8 @@
 
          $("#vectr2btn").click(function () {
 
-    
+              // hide the modal if it is showing
+          $("#imageModal").modal('hide');
           //use the detail template to generate html
           // and put it in the DOM
           var html    = detail_template(data3);
@@ -217,59 +260,101 @@
 
         $("#vectr3btn").click(function () {
 
-    
+              // hide the modal if it is showing
+          $("#imageModal").modal('hide');
           //use the detail template to generate html
           // and put it in the DOM
           var html    = detail_template(data4);
           $('#content').html(html);
         });
 
-        // this instantiates the contact template
+        // this instantiates the detail template
         $("#kaggle1btn").click(function () {
-    
+              // hide the modal if it is showing
+          $("#imageModal").modal('hide');
           //use the detail template to generate html
           // and put it in the DOM
           var html    = detail_template(data2);
           $('#content').html(html);
         });  
         
-        // this instantiates the contact template
+        // this instantiates the detail template
         $("#github1btn").click(function () {
-    
+              // hide the modal if it is showing
+          $("#imageModal").modal('hide');
           //use the detail template to generate html
           // and put it in the DOM
           var html    = detail_template(data6);
           $('#content').html(html);
         }); 
 
-        // this instantiates the contact template
+        // this instantiates the detail template
         $("#github2btn").click(function () {
-    
+              // hide the modal if it is showing
+          $("#imageModal").modal('hide');
           //use the detail template to generate html
           // and put it in the DOM
           var html    = detail_template(data5);
           $('#content').html(html);
         });
 
-        // this instantiates the contact template
+        // this instantiates the detail template
         $("#trello1btn").click(function () {
-    
+              // hide the modal if it is showing
+          $("#imageModal").modal('hide');
           //use the detail template to generate html
           // and put it in the DOM
           var html    = detail_template(data7);
           $('#content').html(html);
         });
 
-        // this instantiates the contact template
+        // this instantiates the detail template
         $("#canva1btn").click(function () {
-    
+              // hide the modal if it is showing
+          $("#imageModal").modal('hide');
           //use the detail template to generate html
           // and put it in the DOM
           var html    = detail_template(data8);
           $('#content').html(html);
         });
+
+
+
+        /*
+        // this instantiates the modal template
+        $("#image1btn").click(function () {
+              // hide the modal if it is showing
+        $("#imageModal").modal('show');
+          //use the detail template to generate html
+          // and put it in the DOM
+              // create a call back for when the model is 
+      // hidden so we can re-display the detail template
+        $('#imageModal').on('hidden.bs.modal', function (){
+        $("#vectr1btn").click();
+      });
+         */
+
+      $("#image1btn").click(function () {
+
+      //use the modal template to generate html
+      // and put it in the DOM
+      var html    = modal_template(image1Data);
+      $('#content').html(html);
+
+      /* we can only show the modal once the 
+         template has been instantiated 
+         because it does not exist before */
+      $("#imageModal").modal('show');
+
+      // create a call back for when the model is 
+      // hidden so we can re-display the detail template
+      $('#imageModal').on('hidden.bs.modal', function (){
+      $("#homebtn").click();
+      });
+
+    });
+
  
       </script>
     
     </body>
-    
