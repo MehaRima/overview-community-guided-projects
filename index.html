@@ -40,6 +40,8 @@
         </ul>
        
         <br/><br/>  
+
+
     
         <!-- the content of the web page starts off empty 
          because we will fill it later from the template -->
@@ -58,12 +60,12 @@
               allow="accelerometer; autoplay; gyroscope; picture-in-picture" 
               allowfullscreen></iframe>
              <!-- <img  style="width:100%" src="{{src}}"/> 
-              clipboard-write; encrypted-media; 
+              clipboard-write;encrypted-media;
                   <h5><a href="{{link}}">Link</a></h5>    -->
             </div>
                 <div class="col-sm-7">
               <h1>{{title}}</h1>
-              <h3>{{description}}</h3>
+              <h3>{{heading}}:-</h3><p>{{description}}</p>
               
                   <h4 class="author">
                     {{author}}
@@ -119,9 +121,10 @@
           
           //src:"imgs/Avatar.png", 
           //video:"", 
-          src:"",
-          title:"Hello!",
-          description:"Welcome to the Coursera Guided Projects overview page.Click on the navigation buttons to know more.",
+          src:"imgs/profile.png",
+          title:"Hello! ",
+          heading : "Welcome to the Coursera Guided Projects overview page",
+          description:"Click on the navigation buttons to know more.",
           author:"Saheli Basu"
         };
 
@@ -142,7 +145,8 @@
           //src: "imgs/1.jpg", 
           src:"videos/VECTR1.webm",  
           title:"Creating Custom Vector Graphic Design Using VECTR : Part I",
-          description:"Something about the project",
+          heading : "Learning Objectives",
+          description:"Learn to use VECTR -> Create custom graphic design -> Edit, modify , implement custom made designs and export them in different formats and share.",
           author:"Saheli Basu"
         };
         // this is the data object we will be using
@@ -151,7 +155,8 @@
           //src: "imgs/9.jpg", 
           src:"videos/KAGGLE1.webm",
           title:"Basic calculations with Python in Kaggle",
-          description:"Something about the project",
+          heading : "Learning Objectives",
+          description:"Learn basic python syntax, variable assignment and numbers -> Define simple functions -> Perform simple mathematical calculations.",
           author:"Saheli Basu"
         };
         
@@ -161,7 +166,8 @@
           //src: "imgs/9.jpg", 
           src:"videos/VECTR2.webm",
           title:"Create Improved Graphic Design Using VECTR-Part II",
-          description:"Something about the project",
+          heading : "Learning Objectives",
+          description:"Learn to create abstract wallpaper/background design in VECTR -> Learn to create flat designs in VECTR -> Learn to symmetrically arrange the designs and apply the shadow feature to enhance the graphic designs in VECTR.",
           author:"Saheli Basu"
         };
 
@@ -171,7 +177,8 @@
           //src: "imgs/9.jpg", 
           src:"videos/VECTR3.webm",
           title:"Creating Website Mockups in VECTR",
-          description:"Something about the project",
+          heading : "Learning Objectives",
+          description:"Create website mockups in VECTR -> Arrange the mockups and export them",
           author:"Saheli Basu"
         };
 
@@ -181,7 +188,8 @@
           //src: "imgs/9.jpg", 
           src:"videos/GITHUB2.webm",
           title:"Simple Webpage Creation in GitHub",
-          description:"Something about the project",
+          heading : "Learning Objectives",
+          description:"Create and fork repositories to host webpages in GitHub -> Personalize a template by editing it and self creating a webpage -> Learn basic concepts of html and and apply them.",
           author:"Saheli Basu"
         };
 
@@ -191,7 +199,8 @@
           //src: "imgs/9.jpg", 
           src:"videos/GITHUB1.webm",
           title:"Web page creation by editing a template in GitHub",
-          description:"Something about the project",
+          heading : "Learning Objectives",
+          description:"Learn to use GitHub to host your website -> Create and personalize a template repository -> Create your webpage from the template.",
           author:"Saheli Basu"
         };
 
@@ -201,7 +210,8 @@
           //src: "imgs/9.jpg", 
           src:"videos/TRELLO1.webm",
           title:"Get organized with Trello Boards",
-          description:"Something about the project",
+          heading : "Learning Objectives",
+          description:"Create a custom board , specify rules and manage a project -> Visualize a sample work and maximize efficiency of the workflow using Kanban Board -> Learn to effectively use the free features by Trello.",
           author:"Saheli Basu"
         };
           // this is the data object we will be using
@@ -210,7 +220,8 @@
           //src: "imgs/9.jpg", 
           src:"videos/CANVA1.webm",
           title:"Creating designs using Canva",
-          description:"Something about the project",
+          heading : "Learning Objectives",
+          description:"Learn to use Canva and explore the website -> Logo and brochure designs using template and from scratch -> Share , Upload and Export designs.",
           author:"Saheli Basu"
         };    
 
@@ -218,6 +229,7 @@
         var image1Data = {
           src: "imgs/thank-you.png",
           title: "Thank you",
+          heading : " ",
           description:" ",
           author: "Saheli Basu"
           
@@ -356,5 +368,9 @@
 
  
       </script>
+
+<div class="page-footer">
+  <h6>Thanks for visiting this page . Created by <a href="https://sahelibasu23.github.io/">Saheli Basu</a></h6>
+</div>       
     
     </body>

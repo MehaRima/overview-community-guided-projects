@@ -1,3 +1,25 @@
+/* Style the components */
+p{
+  color: #6081a7;
+}
+
+
+/* Style the header */
+.page-header {
+  padding: 30px;
+  text-align: center;
+  background: #2c487d;
+  color: white;
+}
+
+/* Style the footer */
+.page-footer {
+  padding: 5px;
+  text-align: center;
+  color: #2c487d;
+}
+
+/* Style the image components */
 .crop-img{
   max-height:150px;
   max-width:100%;
@@ -16,21 +38,22 @@
 }
 
 /* 
- * uncomment this for some css3 drop shadows and rounded corners.
+  css3 drop shadows and rounded corners.
  */
 
 /*
+*/
+/* */
 .thumbnail,.nav, .large-img, .crop-img{
   border-radius: 25px;
   padding-top:5px;
 }
 
 .thumbnail,.nav {
-  box-shadow: 10px 10px 5px #888888;
+  box-shadow: 10px 10px 5px #6081a7;
 }
-*/
-/* */
 
+/* Style the video components */
 .video-overlay {
   
    transition: opacity 0.3s ease-out;
